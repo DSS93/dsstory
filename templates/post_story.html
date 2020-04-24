@@ -1,0 +1,50 @@
+{% extends "bootstrap/base.html" %}
+{% import "bootstrap/wtf.html" as wtf %}
+
+{% block title %}
+Story Sharing - Post Story
+{% endblock %}
+
+{% block styles %}
+{{super()}}
+<link rel="stylesheet" href="{{url_for('.static', filename='signin.css')}}">
+<link rel="stylesheet" href="{{url_for('.static', filename='main.css')}}">
+{% endblock %}
+
+{% block content %}
+   <div>
+
+        <header id="header" class="alt " style="background-color:#005e80; height:100px;">
+            <h1 style="color:yellow"><strong><a href="main.html">DS</a></strong> Story Sharing</h1>
+
+            <nav id="nav">
+                <ul>
+                    <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+                    <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+
+                </ul>
+
+            </nav>
+        </header>
+    </div>
+    <div class="container">
+	    {% for message in get_flashed_messages() %}
+	    <div class="alert alert-success">
+		    <button type="button" class="close" data-dismiss="alert">&times;</button>
+		    {{ message }}
+	    </div>
+	    {% endfor %}
+	    {% block page_content %}{% endblock %}
+    </div>
+
+    <div class="container" style="float:left">
+      <form class="form-signin" method="POST" action="/post_story">
+        <h2 class="form-signin-heading">Post Story</h2>
+        {{ form.hidden_tag() }}
+          {{ wtf.form_field(form.story_txt, placeholder='Write your story here and post') }}
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Post</button>
+      </form>
+    </div> <!-- /container -->
+
+{% endblock %}

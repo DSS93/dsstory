@@ -1,0 +1,48 @@
+<html lang="en" >
+<head>
+    <meta charset="UTF-8">
+    <title>Story Sharing - Read</title>
+    <link rel="stylesheet" href="{{url_for('.static', filename='main.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='rstory.css') }}" media="screen" type="text/css" />
+</head>
+<body>
+    <div>
+
+        <header id="header" class="alt " style="background-color:#005e80; height:100px;">
+            <h1 style="color:yellow"><strong><a href="main.html">DS</a></strong> Story Sharing</h1>
+
+            <nav id="nav">
+                <ul>
+                    <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+                    <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+
+                </ul>
+
+            </nav>
+        </header>
+    </div>
+    <div style=" padding-top:10px; padding-left:25px;padding-right:25px;height:100%">
+        <table class="r_story">
+            <thead>
+                <tr>
+                    <th colspan="2">Published Stories</th>
+                </tr>
+            </thead>
+            {% for item in data %}
+            <tbody>
+                <tr >
+                    <th >{{item.username}}</th>
+                </tr>
+                <tr>
+                    <td>{{item.id}}</td>
+                    <td>{{item.story}}</td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+    </div>
+
+
+</body>
+</html>

@@ -1,0 +1,34 @@
+table.r_story {
+  border: 1px solid #FFFFFF;
+  width: 100%;
+  text-align: left;
+}
+table.r_story td, table.r_story th {
+  border: 1px solid #FFFFFF;
+  padding: 3px 2px;
+}
+table.r_story tbody td {
+  font-size: 15px;
+}
+table.r_story tr:nth-child(odd) {
+  background: #D0E4F5;
+}
+table.r_story thead {
+  background: #0B6FA4;
+  color:black;
+  border-bottom: 5px solid #FFFFFF;
+}
+table.r_story thead th {
+  font-size: 17px;
+  font-weight: bold;
+  color: #FFFFFF;
+  text-align: center;
+  border-left: 2px solid #FFFFFF;
+}
+table.r_story thead th:first-child {
+  border-left: none;
+}
+
+table.r_story tfoot td {
+  font-size: 14px;
+}

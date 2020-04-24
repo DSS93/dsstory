@@ -1,0 +1,73 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>DS Story Sharing</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link rel="stylesheet" href="{{url_for('.static', filename='main.css')}}">
+	</head>
+	<body class="landing">
+
+		<!-- Header -->
+			<header id="header" class="alt ">
+				<h1 style="color:yellow"><strong><a href="main.html">DS</a></strong> Story Sharing</h1>
+				<nav id="nav">
+					<ul>
+						<li><a href="{{ url_for('index') }}">Home</a></li>
+						<li><a href="{{ url_for('dashboard') }}">User Dash</a></li>
+						<li><a href="{{ url_for('login') }}">Login</a></li>
+						<li><a href="{{ url_for('signup') }}">Registration</a></li>
+					</ul>
+				</nav>
+			</header>
+
+			<a href="#menu" class="navPanelToggle"><span class="fa fa-bars"></span></a>
+
+		<!-- Banner -->
+			<section id="banner">
+
+				<h2>Dhruv Singh</h2>
+				<p>Software Developer <br /> Visit my profile for more details</p>
+				<ul class="actions">
+					<li><a href="#one" class="button special big">My Profile</a></li>
+				</ul>
+
+			</section>
+
+			<!-- One -->
+				<section id="one" class="wrapper style1" style="background-color:#FBF8EF">
+					<div class="container 100%">
+						<div class="row 200%">
+							<div >
+								<header >
+									<h3 style="text-transform: capitalize;">Hello Dear,</h3>
+									<p style="color:black;text-transform: capitalize;">I'm ITIL Certified Ex- Cisco employee with 2 years of experience in Development, Testing and Operation</p>
+								</header>
+							</div>
+							<div style="color:black">
+								<P><strong>Technical Skills:</strong><br>
+									Python, Shell Scripting, Flask, JSON, HTML, OOPS, RDBMS, SQL, Database, Jenkins, GIT, ORM, Software Testing, API Testing, mod_wsgi web server, Familiar with AWS
+								</P>
+								<P><strong>Education:</strong><br>
+									B.Tech Graduate from DR. AKTU Lucknow<br>
+									<a href="{{ url_for('download_file') }}">Download Resume</a>
+								</p>
+								<P><strong>Contact:</strong><br>
+									Email: <a>dhruvs.singh87@gmail.com</a><br>
+								</p>
+							</div>
+						</div>
+					</div>
+				</section>
+
+
+		<!-- Footer -->
+		<footer id="myfooter">
+      		<p>Company © Ds Story Sharing. All rights reserved.</p>
+    	</footer>
+
+
+
+	</body>
+</html>

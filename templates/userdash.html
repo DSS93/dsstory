@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{url_for('.static', filename='main.css')}}">
+    <title>Story Sharing - Dashboard</title>
+    <style>
+
+#mydiv{
+    padding:0px;
+    margin-top:30px;
+    border-bottom:solid 2px;
+}
+#mydiv ul{
+list-style:none;
+display:inline;
+
+}
+#mydiv h1{
+float:center;
+}
+#mydiv h5{
+float:right;
+}
+#mydiv ul li{
+background-color:#005e80;
+text-align:center;
+color:black;
+padding:0px;
+margin:0px;
+width:150px;
+opacity:0.8;
+}
+#mydiv ul li:hover{
+background-color:#005e80;
+border:1px solid white;
+}
+#mydiv ul ul{
+display:none;
+padding:0px;
+margin:0px;
+}
+#mydiv ul li a{
+color:white;
+text-decoration: none;
+}
+#mydiv ul li:hover > ul{
+display:block;
+}
+
+</style>
+</head>
+<body>
+    <div>
+
+        <header id="header" class="alt " style="background-color:#005e80; height:100px;">
+            <h1 style="color:yellow"><strong><a href="main.html">DS</a></strong> Story Sharing</h1>
+
+            <nav id="nav">
+                <ul>
+                    <li><a href="{{ url_for('dashboard') }}">Dashboard</a></li>
+                    <li><a href="{{ url_for('profile') }}">Profile</a></li>
+                    <li><a href="{{ url_for('logout') }}">Log Out</a></li>
+
+                </ul>
+
+            </nav>
+        </header>
+    </div>
+    <div id="mydiv">
+        <ul style="position:absolute">
+            <li>More
+                <ul>
+                    <li><a href="{{ url_for('post_story') }}">Post Story</a></li>
+                    <li><a href="{{ url_for('delete_story') }}">Delete Story</a></li>
+                    <li><a href="{{ url_for('my_story') }}">My Story</a></li>
+                    <li><a href="{{ url_for('read_story') }}">Read Story</a></li>
+                    <li><a href="{{ url_for('change_pass') }}">Change Password</a></li>
+                </ul>
+            </li>
+        </ul>
+        <h1 style="text-align:center;">Welcome, {{ name }}</h1>
+
+    </div>
+
+        <div style=" padding-top:10px; padding-left:25px;padding-right:25px">
+            <table class="r_story">
+            <thead style="text-align:center">
+                <tr>
+                    <th colspan="2">Published Stories</th>
+                </tr>
+            </thead>
+            {% for item in data %}
+            <tbody>
+                <tr >
+                    <th >{{item.username}}</th>
+                </tr>
+                <tr>
+                    <td>{{item.id}}</td>
+                    <td>{{item.story}}</td>
+                </tr>
+            </tbody>
+            {% endfor %}
+        </table>
+
+        </div>
+
+
+<div style="padding-top:20px">
+
+    </div>
+</body>
+</html>
