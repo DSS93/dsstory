@@ -197,7 +197,3 @@ def logout():
 def download_file():
 	path = "Resume.pdf"
 	return send_file(path, as_attachment=True)
-
-
-if __name__ == '__main__':
-    app.run()
